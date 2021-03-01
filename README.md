@@ -1,5 +1,5 @@
 # Mall-Customer-Segmentation-Data
-Customer Segmentation for a supermarket mall.
+Customer segmentation for a supermarket mall.
 
 This repository contains: 
 * 'Mall_Customer_Segmentation_Data.ipynb' - notebook file 
@@ -16,7 +16,7 @@ The source of the dataset is [here](https://www.kaggle.com/vjchoudhary7/customer
 
 ## Data Cleaning
 
-The raw data contains each customer's Customer ID, Age, Gender (Male or Female), Annual Income (k$) and a Spending Score (1-100). 
+The raw data contains each customer's Customer ID, Age, Gender (Male or Female), 'Annual Income (k$)' (Income) and a 'Spending Score (1-100)' (Score). 
 
 |    |   CustomerID | Gender   |   Age |   Annual Income (k$) |   Spending Score (1-100) |
 |---:|-------------:|:---------|------:|---------------------:|-------------------------:|
@@ -42,7 +42,17 @@ Going forward, Customer IDs were dropped as they were not relevant for further a
 
 ## Exploratory Data Analysis
 
-<insert features_ images>
+### Individual Variables
+
+Below contains bar charts and histograms on the distribution of each variable: 'Age', 'Gender', 'Income' and 'Score'. 
+
+![features_Age.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/features_Age.png)
+
+![features_Gender.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/features_Gender.png)
+
+![features_Income.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/features_Income.png)
+
+![features_Score.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/features_Score.png)
 
 Findings: 
 * More females than males in the dataset
@@ -50,7 +60,10 @@ Findings:
 * Mainly earning less than $90k in annual income
 * Greater majority with a spending score between 40 and 60, followed by upper and lower ends of the scoring spectrum. 
 
-<insert Pairplots image>
+
+### Pairplots
+
+![Pairplots.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/Pairplots.png)
 
 **Distributions** 
 * Greater kurtosis of Females distributions for Age and Spending Score (1-100) than Males.
@@ -74,10 +87,10 @@ Findings:
     * 2. Majority across all ages between 20 to 60 in Spending Scores
     * 3. Spending Scores below 20. 
 
-**Correlation heatmap** 
+### Correlation heatmap 
 Only the negative correlation between age and spending score is significant, as shown earlier.
 
-<insert corr_heatmap image> 
+![corr_heatmap.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/corr_heatmap.png)
 
 ## Modelling
 K-Means Clustering, Agglomerative Clustering and DBSCAN were models to cluster the individuals differently. Each model has its own approach to test parameters in selecting an appropriate model.  
@@ -89,14 +102,14 @@ Scatter plots and 3D plots (as 'Females' does not a play a significant factor in
 
 ### K-Means Clustering
 
-<insert kmeans_inertia image> 
+![kmeans_inertia.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/kmeans_inertia.png)
 
 Using the Elbow method, the elbow point appears to be 5 clusters, based on observing the highest negative percentage change in 'inertia2' and the plot above. The inertia decreases by default, but decreases insignificantly as the number of clusters increase after 5 clusters. 
 
 The 5 clusters will be checked across various 2D scatter plots under each combination of variables, along with a 3D plot. 
 The combination of scatterplots include the gender variable, 'Female', as below it is evident that scatterplots with 'Female' will not yield informative insights. 
 
-<insert 
+![kmeans_scatter.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/kmeans_scatter.png)
 
 The scatterplots and 3D plot show 5 clusters across three key factors: Spending Score, Income and Age. 
 
@@ -110,15 +123,21 @@ The scatterplots and 3D plot show 5 clusters across three key factors: Spending 
 ### Agglomeration Clustering 
 Dendrograms were built for each of the four linkage methods ('ward', 'complete', 'average' and 'single') to be considered below. 
 
-<insert Dendrogram_ images> 
+![Dendrogram_ward.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/Dendrogram_ward.png)
+
+![Dendrogram_complete.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/Dendrogram_complete.png)
+
+![Dendrogram_average.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/Dendrogram_average.png)
+
+![Dendrogram_single.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/Dendrogram_single.png)
 
 The longest vertical distance without any horizontal line passing would help determine the number of selected clusters. From the above dendrograms, this is the most clear using the 'ward' linkage method on the right-hand side. 
 
 By observing for distances below 125 roughly, there are 6 clusters that are shown with 6 vertical lines below the distance of roughly 125. 
 
-<insert agg_scatter images> 
+![agg_scatter.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/agg_scatter.png)
 
-<insert agg_3D image> 
+![agg_3D.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/agg_3D.png)
 
 The scatterplots and 3D plot show 6 clusters across three key factors: Spending Score, Income and Age. 
 
@@ -135,9 +154,9 @@ The scatterplots and 3D plot show 6 clusters across three key factors: Spending 
 The optimal value for epsilon is be found at the point of maximum curvature of each point's closest distance from another point. 
 From the below, the maximum curvature is where epsilon is 10.
 
-<insert dbscan_scatter images> 
+![dbscan_scatter.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/dbscan_scatter.png)
 
-<insert dbscan_3D image> 
+![dbscan_3D.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/dbscan_3D.png)
 
 The scatterplots and 3D plot show 6 clusters across three key factors: Spending Score, Income and Age. 
 
