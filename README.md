@@ -1,4 +1,5 @@
 # Mall-Customer-Segmentation-Data
+Customer Segmentation for a supermarket mall.
 
 This repository contains: 
 * 'Mall_Customer_Segmentation_Data.ipynb' - notebook file 
