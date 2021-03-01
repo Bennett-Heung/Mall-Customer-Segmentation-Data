@@ -18,6 +18,7 @@ The source of the dataset is [here](https://www.kaggle.com/vjchoudhary7/customer
 
 The raw data contains each customer's Customer ID, Age, Gender (Male or Female), 'Annual Income (k$)' (Income) and a 'Spending Score (1-100)' (Score). 
 
+*Preview of Raw Data*
 |    |   CustomerID | Gender   |   Age |   Annual Income (k$) |   Spending Score (1-100) |
 |---:|-------------:|:---------|------:|---------------------:|-------------------------:|
 |  0 |            1 | Male     |    19 |                   15 |                       39 |
@@ -32,6 +33,7 @@ Checks were made as a preprocessing step before exploratory data analysis and mo
 
 Going forward, Customer IDs were dropped as they were not relevant for further analysis and Gender was tranformed into the dummy variable 'Female', where: Female = 1 and Male = 0, as shown below. 
 
+*Preview of Updated Data*
 |    |   Age |   Income |   Score |   Female |
 |---:|------:|---------:|--------:|---------:|
 |  0 |    19 |       15 |      39 |        1 |
@@ -46,12 +48,16 @@ Going forward, Customer IDs were dropped as they were not relevant for further a
 
 Below contains bar charts and histograms on the distribution of each variable: 'Age', 'Gender', 'Income' and 'Score'. 
 
+*Age*
 ![features_Age.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/features_Age.png)
 
+*Gender*
 ![features_Gender.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/features_Gender.png)
 
+*Income*
 ![features_Income.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/features_Income.png)
 
+*Score*
 ![features_Score.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/features_Score.png)
 
 Findings: 
@@ -62,7 +68,7 @@ Findings:
 
 
 ### Pairplots
-
+*Pairplots*
 ![Pairplots.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/Pairplots.png)
 
 **Distributions** 
@@ -90,6 +96,7 @@ Findings:
 ### Correlation heatmap 
 Only the negative correlation between age and spending score is significant, as shown earlier.
 
+*Correlation Heatmap*
 ![corr_heatmap.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/corr_heatmap.png)
 
 ## Modelling
@@ -101,7 +108,7 @@ K-Means Clustering, Agglomerative Clustering and DBSCAN were models to cluster t
 Scatter plots and 3D plots (as 'Females' does not a play a significant factor in clustering) are shown to provide insights of the clustering results from each model. 
 
 ### K-Means Clustering
-
+*K-Means Inertia for each number of clusters*
 ![kmeans_inertia.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/kmeans_inertia.png)
 
 Using the Elbow method, the elbow point appears to be 5 clusters, based on observing the highest negative percentage change in 'inertia2' and the plot above. The inertia decreases by default, but decreases insignificantly as the number of clusters increase after 5 clusters. 
@@ -109,7 +116,11 @@ Using the Elbow method, the elbow point appears to be 5 clusters, based on obser
 The 5 clusters will be checked across various 2D scatter plots under each combination of variables, along with a 3D plot. 
 The combination of scatterplots include the gender variable, 'Female', as below it is evident that scatterplots with 'Female' will not yield informative insights. 
 
+*K-Means Scatterplots*
 ![kmeans_scatter.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/kmeans_scatter.png)
+
+*K-Means 3D Plot*
+![kmeans_3D.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/kmeans_3D.png)
 
 The scatterplots and 3D plot show 5 clusters across three key factors: Spending Score, Income and Age. 
 
@@ -123,6 +134,7 @@ The scatterplots and 3D plot show 5 clusters across three key factors: Spending 
 ### Agglomeration Clustering 
 Dendrograms were built for each of the four linkage methods ('ward', 'complete', 'average' and 'single') to be considered below. 
 
+*Dendrograms*
 ![Dendrogram_ward.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/Dendrogram_ward.png)
 
 ![Dendrogram_complete.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/Dendrogram_complete.png)
@@ -135,8 +147,10 @@ The longest vertical distance without any horizontal line passing would help det
 
 By observing for distances below 125 roughly, there are 6 clusters that are shown with 6 vertical lines below the distance of roughly 125. 
 
+*Agglomerative Clustering Scatterplots*
 ![agg_scatter.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/agg_scatter.png)
 
+*Agglomerative Clustering 3D Plot*
 ![agg_3D.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/agg_3D.png)
 
 The scatterplots and 3D plot show 6 clusters across three key factors: Spending Score, Income and Age. 
@@ -154,8 +168,10 @@ The scatterplots and 3D plot show 6 clusters across three key factors: Spending 
 The optimal value for epsilon is be found at the point of maximum curvature of each point's closest distance from another point. 
 From the below, the maximum curvature is where epsilon is 10.
 
+*DBCSAN Scatterplots*
 ![dbscan_scatter.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/dbscan_scatter.png)
 
+*DBCSAN 3D Plot*
 ![dbscan_3D.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/dbscan_3D.png)
 
 The scatterplots and 3D plot show 6 clusters across three key factors: Spending Score, Income and Age. 
