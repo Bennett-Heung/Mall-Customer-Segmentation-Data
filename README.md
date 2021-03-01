@@ -2,7 +2,7 @@
 
 This repository contains: 
 * 'Mall_Customer_Segmentation_Data.ipynb' - notebook file 
-* 'Data' zip folder - contains the raw data
+* 'Data.zip' - zip folder contains the raw data
 * 'Images' folder - contains the image outputs of the notebook file
 * 'README.md' - summary report for the repository. 
 
