@@ -218,4 +218,4 @@ Despite the different clustering results that come with selecting the model, clu
 
 Both K-Means and Agglomerative Clustering indicate a low Income and low Spending Score cluster, while DBSCAN treats them as outliers. 
 
-It might be speculative, but it might be a reflection that K-Means and Agglomerative Clustering do not label outliers, while DBSCAN does. 
+It might be speculative, but it might be a reflection that K-Means and Agglomerative Clustering do not label outliers, while DBSCAN does.  
