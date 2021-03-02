@@ -159,7 +159,7 @@ Dendrograms were built for each of the four linkage methods ('ward', 'complete',
 
 The longest vertical distance without any horizontal line passing would help determine the number of selected clusters. From the above dendrograms, this is the most clear using the 'ward' linkage method on the right-hand side. 
 
-By observing for distances below 125 roughly, there are 6 clusters that are shown with 6 vertical lines below the distance of roughly 125. 
+By observing for distances below 125(below), there are 6 clusters that are shown with 6 vertical lines below the distance of 125. 
 
 ![Dendrogram__Ward.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/Dendrogram__Ward.png)
 
