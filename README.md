@@ -1,4 +1,4 @@
-1# Mall-Customer-Segmentation-Data
+# Mall-Customer-Segmentation-Data
 Customer segmentation for a supermarket mall.
 
 This repository contains: 
