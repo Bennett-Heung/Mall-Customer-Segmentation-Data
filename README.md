@@ -66,6 +66,7 @@ Below contains bar charts and histograms on the distribution of each variable: '
 
 ![features_Score.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/features_Score.png)
 
+
 Findings: 
 * More females than males in the dataset
 * Mainly below 50 years of age 
