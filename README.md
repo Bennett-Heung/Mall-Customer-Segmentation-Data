@@ -63,7 +63,7 @@ Going forward, Customer IDs were dropped as they were not relevant for further a
 
 *Pairplots*
 
-![Pairplots.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/Pairplots.png)
+![Pairplots.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/images/Pairplots.png)
 
 **Distributions** 
 * Greater kurtosis of Females distributions for Age and Spending Score (1-100) than Males.
@@ -105,7 +105,7 @@ Scatter plots and 3D plots (as 'Females' does not a play a significant factor in
 ### K-Means Clustering
 *K-Means Inertia for each number of clusters*
 
-![kmeans_inertia.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/kmeans_inertia.png)
+![kmeans_inertia.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/images/kmeans_inertia.png)
 
 Using the Elbow method, the elbow point appears to be 5 clusters, based on observing the highest negative percentage change in 'inertia2' and the plot above. The inertia decreases by default, but decreases insignificantly as the number of clusters increase after 5 clusters. 
 
@@ -114,11 +114,11 @@ The combination of scatterplots include the gender variable, 'Female', as below 
 
 *K-Means Scatterplots*
 
-![kmeans_scatter.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/kmeans_scatter.png)
+![kmeans_scatter.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/images/kmeans_scatter.png)
 
 *K-Means 3D Plot*
 
-![kmeans_3D.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/kmeans_3D.png)
+![kmeans_3D.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/images/kmeans_scatter.png)
 
 **K-Means Clustering shows 5 clusters:**
 * Red: High Income and Spending Score, and under 40 years of age
@@ -130,15 +130,15 @@ The combination of scatterplots include the gender variable, 'Female', as below 
 ### Agglomeration Clustering 
 Dendrograms were built for each of the four linkage methods ('ward', 'complete', 'average' and 'single') to be considered for agglomeration clustering. The 'ward' linkage method and number of clusters were determined on the basis of creating the cut-off from the longest vertical distance without any horizontal line passing. This is shown below from observing for distances below 125, where there are 6 clusters shown with 6 vertical lines below the distance of 125. 
 
-![Dendrogram__Ward.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/Dendrogram__Ward.png)
+![Dendrogram__Ward.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/images/Dendrogram__Ward.png)
 
 *Agglomerative Clustering Scatterplots*
 
-![agg_scatter.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/agg_scatter.png)
+![agg_scatter.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/images/agg_scatter.png)
 
 *Agglomerative Clustering 3D Plot*
 
-![agg_3D.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/agg_3D.png)
+![agg_3D.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/images/agg_3D.png)
 
 **Agglomerative Clustering shows 6 clusters:**
 
@@ -155,12 +155,11 @@ From the below, the maximum curvature is where epsilon is 10.
 
 *DBCSAN Scatterplots*
 
-![dbscan_scatter.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/dbscan_scatter.png)
+![dbscan_scatter.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/images/dbscan_scatter.png)
 
 *DBCSAN 3D Plot*
 
-
-![dbscan_3D.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/dbscan_3D.png)
+![dbscan_3D.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/images/agg_3D.png)
 
 **DCSCAN shows 4 clusters:**
 
