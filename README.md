@@ -118,7 +118,7 @@ The combination of scatterplots include the gender variable, 'Female', as below 
 
 *K-Means 3D Plot*
 
-![kmeans_3D.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/images/kmeans_scatter.png)
+![kmeans_3D.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/images/kmeans_3D.png)
 
 **K-Means Clustering shows 5 clusters:**
 * Red: High Income and Spending Score, and under 40 years of age
