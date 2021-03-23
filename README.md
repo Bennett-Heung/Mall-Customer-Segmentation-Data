@@ -8,11 +8,8 @@ This repository contains:
 * 'README.md' - summary report for the repository. 
 
 ## Objective
-You are owning a supermarket mall and want to understand the customers to develop a marketing strategy. This is achieved by using unsupervised ML techniques to identify my target customers.  
+One of the key marketing campaign problems involves understanding customers to deliver an effective marketing strategy within business constraints of time and costs. Customer segmentation is a key process that resolves this by targeting specific customers based on common characteristics. In this notebook, the process of customer segmentation is delivered by unsupervised clustering processes on data sourced from [here](https://www.kaggle.com/vjchoudhary7/customer-segmentation-tutorial-in-python).
 
-You have information from customer membership cards, such as Customer ID, Age, Gender, Annual Income and a Spending Score, which is a score assigned to the customer based on parameters like customer behaviour and purchasing data. 
-
-The source of the dataset is [here](https://www.kaggle.com/vjchoudhary7/customer-segmentation-tutorial-in-python). 
 
 ## Data Cleaning
 
@@ -46,35 +43,23 @@ Going forward, Customer IDs were dropped as they were not relevant for further a
 
 ## Exploratory Data Analysis
 
-### Individual Variables
+*Descriptive Statistics* 
+|       |     Age |   Income |    Score |
+|:------|--------:|---------:|---------:|
+| count | 200     | 200      | 200      |
+| mean  |  38.85  |  60.56   |  50.2    |
+| std   |  13.969 |  26.2647 |  25.8235 |
+| min   |  18     |  15      |   1      |
+| 25%   |  28.75  |  41.5    |  34.75   |
+| 50%   |  36     |  61.5    |  50      |
+| 75%   |  49     |  78      |  73      |
+| max   |  70     | 137      |  99      |
 
-Below contains bar charts and histograms on the distribution of each variable: 'Age', 'Gender', 'Income' and 'Score'. 
+(Note: 112 females and 88 males were in the data.) 
 
-*Age*
-
-![features_Age.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/features_Age.png)
-
-*Gender*
-
-![features_Gender.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/features_Gender.png)
-
-*Income*
-
-![features_Income.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/features_Income.png)
-
-*Score*
-
-![features_Score.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/features_Score.png)
-
-
-Findings: 
-* More females than males in the dataset
-* Mainly below 50 years of age 
-* Mainly earning less than $90k in annual income
-* Greater majority with a spending score between 40 and 60, followed by upper and lower ends of the scoring spectrum. 
-
-
-### Pairplots
+* Age is positively skewed, as the youngest age to obtain customer data is 18 years of age. 
+* Income appears positively skewed, which is plausible given that spending information is more likely obtained from spenders who have more income.  
+* (Spending) Scores are roughly normally distributed.
 
 *Pairplots*
 
@@ -135,8 +120,6 @@ The combination of scatterplots include the gender variable, 'Female', as below 
 
 ![kmeans_3D.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/kmeans_3D.png)
 
-The scatterplots and 3D plot show 5 clusters across three key factors: Spending Score, Income and Age. 
-
 **K-Means Clustering shows 5 clusters:**
 * Red: High Income and Spending Score, and under 40 years of age
 * Orange: High Income and low Spending Score 
@@ -145,24 +128,9 @@ The scatterplots and 3D plot show 5 clusters across three key factors: Spending 
 * Grey: Low Income and Spending Score.
 
 ### Agglomeration Clustering 
-Dendrograms were built for each of the four linkage methods ('ward', 'complete', 'average' and 'single') to be considered below. 
-
-*Dendrograms*
-
-![Dendrogram_ward.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/Dendrogram_ward.png)
-
-![Dendrogram_complete.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/Dendrogram_complete.png)
-
-![Dendrogram_average.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/Dendrogram_average.png)
-
-![Dendrogram_single.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/Dendrogram_single.png)
-
-The longest vertical distance without any horizontal line passing would help determine the number of selected clusters. From the above dendrograms, this is the most clear using the 'ward' linkage method on the right-hand side. 
-
-By observing for distances below 125(below), there are 6 clusters that are shown with 6 vertical lines below the distance of 125. 
+Dendrograms were built for each of the four linkage methods ('ward', 'complete', 'average' and 'single') to be considered for agglomeration clustering. The 'ward' linkage method and number of clusters were determined on the basis of creating the cut-off from the longest vertical distance without any horizontal line passing. This is shown below from observing for distances below 125, where there are 6 clusters shown with 6 vertical lines below the distance of 125. 
 
 ![Dendrogram__Ward.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/Dendrogram__Ward.png)
-
 
 *Agglomerative Clustering Scatterplots*
 
@@ -171,8 +139,6 @@ By observing for distances below 125(below), there are 6 clusters that are shown
 *Agglomerative Clustering 3D Plot*
 
 ![agg_3D.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/agg_3D.png)
-
-The scatterplots and 3D plot show 6 clusters across three key factors: Spending Score, Income and Age. 
 
 **Agglomerative Clustering shows 6 clusters:**
 
@@ -195,8 +161,6 @@ From the below, the maximum curvature is where epsilon is 10.
 
 ![dbscan_3D.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/dbscan_3D.png)
 
-The scatterplots and 3D plot show 6 clusters across three key factors: Spending Score, Income and Age. 
-
 **DCSCAN shows 4 clusters:**
 
 * Orange: Low Income, high Spending Score under 30 years of Age
@@ -205,18 +169,22 @@ The scatterplots and 3D plot show 6 clusters across three key factors: Spending 
 * Grey: Slightly lower Income and moderate Spending Score 
 * Red: Outliers.
 
-## Conclusion
+## Deploying Solution
 
-The results of each cluster for each model are mentioned in the section above. The selected model is ultimately a matter of choosing either K-Means, Agglomerative Clustering or DBSCAN. 
+**Agglomerative Clustering** results show that is the deployable solution producing the most clear-cut clusters. K-Means Clustering and Agglomerative Clustering models produce similar results. However, Agglomerative Clustering shows more distinguishable clusters across the three key characteristics - income, age and spending score. DBSCAN distinguishes from these techniques with the ability to show outliers, but does not produce clusters that are as distinguishable for customer segmentation here. 
 
-Despite the different clustering results that come with selecting the model, clustering for all models have a couple of commonalities: 
-* Clustering falls under the basis of Age, Spending Score and Income.  
-* Each clustering model indicates common clusters following these characteristics: 
-    * High Income, high Spending Score, under 40 years of Age
-    * High Income, low Spending Score 
-    * Low Income, high Spending Score, around the younger half of the Age distribution 
-    * The models do show some form of a group roughly in moderate levels of Income and Spending Score.   
+To deliver an effective marketing campaign, different approaches could be catered to each of the following customer segmentations, as split by Age, Income and Spending Score. 
 
-Both K-Means and Agglomerative Clustering indicate a low Income and low Spending Score cluster, while DBSCAN treats them as outliers. 
-
-It might be speculative, but it might be a reflection that K-Means and Agglomerative Clustering do not label outliers, while DBSCAN does.  
+* Two high Income groups of customers: 
+    * i) one with low Spending Scores 
+    * ii) another with high Spending Scores and under 40 years of Age
+    
+    
+* Two medium Income and Spending Score customer groups: 
+    * iii) one over 30 years of Age
+    * iv) another under 30 years of Age
+    
+    
+* Two low Income groups of customers: 
+    * v) one with low Spending Scores
+    * vi) Another with high Spending Scores and under 30 years of Age.
