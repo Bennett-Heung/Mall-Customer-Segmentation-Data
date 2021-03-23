@@ -169,7 +169,7 @@ From the below, the maximum curvature is where epsilon is 10.
 * Grey: Slightly lower Income and moderate Spending Score 
 * Red: Outliers.
 
-## Deploying Solution
+## Deployed Solution
 
 **Agglomerative Clustering** results show that is the deployable solution producing the most clear-cut clusters. K-Means Clustering and Agglomerative Clustering models produce similar results. However, Agglomerative Clustering shows more distinguishable clusters across the three key characteristics - income, age and spending score. DBSCAN distinguishes from these techniques with the ability to show outliers, but does not produce clusters that are as distinguishable for customer segmentation here. 
 
