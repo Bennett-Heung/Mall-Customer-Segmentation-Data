@@ -1,5 +1,5 @@
 # Mall-Customer-Segmentation-Data
-Customer segmentation for a supermarket mall.
+Customer segmentation to help businesses deliver effective marketing strategies.
 
 This repository contains: 
 * 'Mall_Customer_Segmentation_Data.ipynb' - notebook file 
