@@ -92,7 +92,7 @@ Only the negative correlation between age and spending score is significant, as 
 
 *Correlation Heatmap*
 
-![corr_heatmap.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/corr_heatmap.png)
+![corr_heatmap.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/images/corr_heatmap.png)
 
 ## Modelling
 K-Means Clustering, Agglomerative Clustering and DBSCAN were models to cluster the individuals differently. Each model has its own approach to test parameters in selecting an appropriate model.  
