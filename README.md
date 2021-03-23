@@ -159,6 +159,7 @@ From the below, the maximum curvature is where epsilon is 10.
 
 *DBCSAN 3D Plot*
 
+
 ![dbscan_3D.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/Images/dbscan_3D.png)
 
 **DCSCAN shows 4 clusters:**
