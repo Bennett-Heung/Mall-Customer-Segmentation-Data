@@ -169,9 +169,25 @@ From the below, the maximum curvature is where epsilon is 10.
 * Grey: Slightly lower Income and moderate Spending Score 
 * Red: Outliers.
 
-## Deployed Solution
+## Evaluation 
 
-**Agglomerative Clustering** results show that is the deployable solution producing the most clear-cut clusters. K-Means Clustering and Agglomerative Clustering models produce similar results. However, Agglomerative Clustering shows more distinguishable clusters across the three key characteristics - income, age and spending score. DBSCAN distinguishes from these techniques with the ability to show outliers, but does not produce clusters that are as distinguishable for customer segmentation here. 
+|                                       |   Silhouette Coefficient |   Calinski-Harabasz Index |   Davies-Bouldin Index |
+|:--------------------------------------|-------------------------:|--------------------------:|-----------------------:|
+| KMeans(n_clusters=5)                  |                 0.444464 |                  150.97   |               0.819261 |
+| AgglomerativeClustering(n_clusters=6) |                 0.443089 |                  159.456  |               0.768478 |
+| DBSCAN(eps=10)                        |                 0.152126 |                   30.5077 |               2.02969  |
+
+![Silhouette%20Coefficient.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/images/Silhouette%20Coefficient.png)
+
+![Calinski-Harabasz%20Index.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/images/Calinski-Harabasz%20Index.png)
+
+![Davies-Bouldin%20Index.png](https://github.com/Bennett-Heung/Mall-Customer-Segmentation-Data/blob/main/images/Davies-Bouldin%20Index.png)
+
+## Deploying Solution
+
+**Agglomerative Clustering** results show that is the deployable solution producing the most clear-cut clusters. 
+* Despite K-Means producing a fractionally higher Silhoutte Coefficient than Agglomerative Clustering, both the Calinski-Harabasz Index and Davies-Bouldin Index distinctly favour Agglomerative Clustering. 
+* Note that DBSCAN distinguishes from these techniques with the ability to show outliers. It also does not generally score well with these metrics, which is a common drawback of these metrics. 
 
 To deliver an effective marketing campaign, different approaches could be catered to each of the following customer segmentations, as split by Age, Income and Spending Score. 
 
